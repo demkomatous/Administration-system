@@ -1,8 +1,8 @@
 <?php
-	define('DB_NAME', 'demkoma20');
-	define('DB_USER', 'demkoma20');
-	define('DB_PASSWORD', 'VrOOiCEe');
-	define('DB_HOST', '127.0.0.1');
+	define('DB_NAME', '');
+	define('DB_USER', '');
+	define('DB_PASSWORD', '');
+	define('DB_HOST', '');
 
 	global $db;
 	$db = new PDO(
