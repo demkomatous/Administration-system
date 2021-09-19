@@ -16,10 +16,6 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
---
--- Databáze: `demkoma20`
---
-
 -- --------------------------------------------------------
 
 --
@@ -36,11 +32,6 @@ CREATE TABLE IF NOT EXISTS `User_access` (
 --
 -- Vypisuji data pro tabulku `User_access`
 --
-
-INSERT INTO `User_access` (`ID`, `name`, `surname`, `password`) VALUES
-(1, 'James', 'Khali', 'Remember'),
-(2, 'Host', 'Host', 'Host'),
-(4, 'Přemysl', 'Vaculík', '123456');
 
 --
 -- Klíče pro exportované tabulky
