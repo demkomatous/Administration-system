@@ -1,6 +1,5 @@
 <?php  
 	include_once "../Accessed/Library/db.php";
-	include_once "../Library/hash.php";
 
 	session_start();
 //Setting and verifying variables
@@ -24,7 +23,7 @@
 
 	if (isset($_POST["password"]) && is_string($_POST["password"]) && !preg_match( '/(User_access|DELETE|DROP|TABLE)/', $_POST["password"])) {
 		$password = $_POST["password"];
-		$password = customHash($password);
+		$password = hash("sha512", $password);
 	} else {
 		$password = null;
 	}
@@ -37,7 +36,8 @@
 			':email' => $email,
 			':password' => $password,
 		);
-		$sql_access = "SELECT * FROM User_access WHERE name = :name AND surname = :surname AND email = :email AND password = :password LIMIT 0,1";
+		var_dump($select);
+		$sql_access = "SELECT * FROM User_access WHERE name = :name AND surname = :surname AND password = :password AND email = :email LIMIT 0,1";
 
 		$sql_cmd_access = $db->prepare($sql_access);
 		$sql_cmd_access->execute($select);

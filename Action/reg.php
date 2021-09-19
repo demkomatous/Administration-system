@@ -1,6 +1,5 @@
 <?php 
 	include_once "../Accessed/Library/db.php";
-	include_once "../Library/hash.php";
 
 	session_start();
 
@@ -43,7 +42,7 @@
 			exit();
 		}
 //Hash password
-		$password = customHash($password);
+		$password = hash("sha512", $password);
 //Existence of login
 		$select = array(
 			':name' => $name,
